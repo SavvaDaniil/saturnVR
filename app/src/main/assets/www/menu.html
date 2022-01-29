@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+
+	<title>Главное меню</title>
+	<!--
+	<link rel="icon" href="favicon.ico"
+	  type="image/x-icon" />
+	<link rel="shortcut icon"
+	  href="favicon.ico"
+	  type="image/x-icon" />
+	  -->
+<link href="css/bootstrap.css" rel="stylesheet">
+
+<style>
+body
+{
+/*
+background: url(menu.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+*/
+background-image: url(menu.jpg);
+background-repeat: no-repeat;
+background-size: 100% auto;
+background-position: center top;
+background-attachment: fixed;
+}
+
+.dbcl{
+	text-align:center;
+}
+
+.bcl {
+	width:180px;
+	height:50px;
+	margin-bottom:5px;
+	text-align:left;
+}
+.bcl-menu {
+	width:180px;
+	height:50px;
+	margin-bottom:5px;
+	text-align:center;
+}
+</style>
+
+</head>
+<body style="">
+
+
+<div class="row" style="padding-top:5%;width:100%;height:100%;">
+	<div class="container" id="a" style="margin-left:5%;">
+			<center>
+				<!--<img src="mioclogo.png" width="50px;" />-->
+				<h2 id="h2nameapp" style="font-size:22px;font-weight:bold;color:yellow;display:none;margin-top:40px;">VR-тур по учебно-спортивному центру<br />"Сатурн"</h2>
+			</center>
+			
+			<div id="menu0">
+				<center><img src="loading.gif" style="width:80px;margin-top:15%;" /></center>
+			</div>
+			
+			<!--
+			<div id="menu1" style="display:none;">
+				<center>
+					<button class="btn btn-danger" id="btn_start" style="margin-top:25px;font-weight:bold;padding:10px;width:140px;" onclick="a();">Начать</button><br />
+					<button class="btn btn-danger" id="btn_change_language" style="margin-top:8px;font-weight:bold;padding:10px;width:140px;" onclick="cm(2);">Сменить язык</button>
+				</center>
+			</div>
+			-->
+			<div id="menu1" class="row" style="display:none;">
+				<center>
+					<div class="col-sm-12 col-xs-12">
+						<button class="btn btn-danger" id="btn_start" style="margin-top:25px;font-weight:bold;padding:10px;width:140px;" onclick="a();updateFromAndroid();">Начать</button>
+						<button class="btn btn-danger" id="btn_continue" style="margin-top:25px;font-weight:bold;padding:10px;width:140px;" disabled onclick="a();updateFromAndroid2();">Продолжить</button>
+					</div>
+					<button class="btn btn-danger" id="btn_change_language" style="margin-top:8px;font-weight:bold;padding:10px;width:140px;" onclick="cm(2);">Сменить язык</button>
+				</center>
+			</div>
+			
+			
+			
+			<div id="menu2" style="display:none;">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 dbcl"><button class="btn btn-warning bcl-menu" id="btn_back_to_main_menu" onclick="cm(1);">Главное меню</div>
+				
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 dbcl"><button class="btn btn-default bcl" onclick="cl('en');"><img src="images/flags/en.png" style="width:50px;height:auto;" /> English</button></div>
+				
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 dbcl"><button class="btn btn-success bcl" onclick="cl('ru');"><img src="images/flags/ru.png" style="width:50px;height:auto;" /> Русский</button></div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 dbcl"><button class="btn btn-default bcl" onclick="cl('de');"><img src="images/flags/de.png" style="width:50px;height:auto;" /> Deutsch</button></div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 dbcl"><button class="btn btn-default bcl" onclick="cl('se');"><img src="images/flags/se.png" style="width:50px;height:auto;" /> Español</button></div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 dbcl"><button class="btn btn-default bcl" onclick="cl('pt');"><img src="images/flags/pt.png" style="width:50px;height:auto;" /> Português</button></div>
+			</div>
+			
+	</div>
+</div>
+
+<input id="actual_language" value="ru" style="display:none" />
+<input id="last_image" value="1" style="display:none" />
+
+<script>
+function getUrlVars() {
+	var vars = {};
+	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	vars[key] = value;
+	});
+	return vars;
+}
+
+//загрузка языка страницы в зависимости от get-параметров НАЧАЛО
+function clal(a,b,c,d,e){
+	document.getElementById("h2nameapp").innerHTML = a;
+	document.getElementById("btn_start").innerHTML = b;
+	document.getElementById("btn_change_language").innerHTML = c;
+	document.getElementById("btn_back_to_main_menu").innerHTML = d;
+	document.getElementById("btn_continue").innerHTML = e;
+}
+
+//загрузка языка страницы в зависимости от get-параметров КОНЕЦ
+
+
+
+//функция смены языка НАЧАЛО
+function cl(a){
+		var ab = document.getElementsByClassName('bcl');
+		for(var i = 0; i < ab.length; i++) {
+			document.getElementsByClassName('bcl')[i].className = "btn btn-default bcl";
+		}
+			
+	if(a == "en"){
+		clal('VR-tour of the educational and sports center<br />"Saturn"',"Start","Change language","Main menu","Continue");
+		document.getElementsByClassName('btn btn-default bcl')[0].className = "btn btn-success bcl";
+		document.getElementById("actual_language").innerHTML = a;
+		Android.new_language("en");
+	}
+	if(a == "ru"){
+		clal('VR-тур по учебно-спортивному центру<br />"Сатурн"',"Старт","Сменить язык","Главное меню","Продолжить");
+		document.getElementsByClassName('btn btn-default bcl')[1].className = "btn btn-success bcl";
+		document.getElementById("actual_language").innerHTML = a;
+		Android.new_language("ru");
+	}
+	if(a == "de"){
+		clal('VR-Tour durch das Bildungs- und Sportzentrum<br />"Saturn"',"Start","Sprache ändern","Hauptmenü","Fortsetzen");
+		document.getElementsByClassName('btn btn-default bcl')[2].className = "btn btn-success bcl";
+		document.getElementById("actual_language").innerHTML = a;
+		Android.new_language("de");
+	}
+	if(a == "se"){
+		clal('VR-tour del centro educativo y deportivo<br />"Saturno"',"Empezar","Cambiar idioma","Menú principal","Continuar");
+		document.getElementsByClassName('btn btn-default bcl')[3].className = "btn btn-success bcl";
+		document.getElementById("actual_language").innerHTML = a;
+		Android.new_language("se");
+	}
+	if(a == "pt"){
+		clal('VR-tour do centro educacional e esportivo<br />"Saturno"',"Começar","Mudar idioma","Menu principal","Continuar");
+		document.getElementsByClassName('btn btn-default bcl')[4].className = "btn btn-success bcl";
+		document.getElementById("actual_language").innerHTML = a;
+		Android.new_language("pt");
+	}
+}
+//функция смены языка КОНЕЦ
+
+
+function cm(a){
+	if(a == "1"){document.getElementById("menu1").style.display = "block";document.getElementById("menu2").style.display = "none";}
+	if(a == "2"){document.getElementById("menu1").style.display = "none";document.getElementById("menu2").style.display = "block";}
+}
+
+
+
+var lang = getUrlVars()["lang"];
+
+if(typeof lang != "undefined"){
+	/*
+	if(lang == "en"){
+		clal('VR-tour of the educational and sports center "Saturn"',"Start","Change language","Main menu");
+	}
+	if(lang == "de"){
+		clal('VR-Tour durch das Bildungs- und Sportzentrum "Saturn"',"Start","Sprache ändern","Hauptmenü");
+	}
+	if(lang == "se"){
+		clal('VR-tour del centro educativo y deportivo "Saturno"',"Empezar","Cambiar idioma","Menú principal");
+	}
+	if(lang == "pt"){
+		clal('VR-tour do centro educacional e esportivo "Saturno"',"Começar","Mudar idioma","Menu principal");
+	}
+	*/
+	cl(lang);
+	
+	document.getElementById("menu0").style.display = "none";
+	document.getElementById("h2nameapp").style.display = "block";
+	document.getElementById("menu1").style.display = "block";
+} else {
+	document.getElementById("menu0").style.display = "none";
+	document.getElementById("h2nameapp").style.display = "block";
+	document.getElementById("menu1").style.display = "block";
+}
+
+
+
+
+
+
+
+
+
+function a(){
+	document.getElementById('a').innerHTML = '<center><img src="loading.gif" style="width:80px;margin-top:15%;" /></center>';
+	var a = document.getElementById("actual_language").innerHTML;
+	if(a == "ru" || a == ""){}
+	if(a == "en"){}
+	if(a == "de"){}
+	if(a == "se"){}
+	if(a == "pt"){}
+}
+
+
+
+function check_continue(){
+var a = getUrlVars()["a"];
+	if(typeof a != "undefined"){
+		document.getElementById("btn_continue").disabled = false;
+		//document.getElementById("last_image").value = a;
+	}
+}
+check_continue();
+
+</script>
+
+<!--
+<div class="row" style="padding-top:15%;">
+	<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+	
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		<img src="images/button1.jpg" />
+	</div>
+	
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+	
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		<img src="images/button1.jpg" />
+	</div>
+	
+	<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+	
+	
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:35%;"></div>
+	<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+	
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		<img src="images/button1.jpg" />
+	</div>
+	
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+	
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		<img src="images/button1.jpg" />
+	</div>
+	
+	<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+</div>
+-->
+<script>
+	function updateFromAndroid(){
+		Android.change_page("Идёт загрузка, пожалуйста подождите...");
+	}
+	function updateFromAndroid2(){
+		Android.continue_walkthrough("Идёт загрузка, пожалуйста подождите...");
+	}
+</script>
+
+</body>
+</html>

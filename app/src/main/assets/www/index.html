@@ -1,0 +1,1646 @@
+<html>
+  <head>
+    <!--<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>-->
+	<title>Учебно-спортивный центр "Сатурн"</title>
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta charset="utf-8">
+    <meta aframe-injected="" name="mobile-web-app-capable" content="yes">
+	<meta aframe-injected="" name="theme-color" content="black">
+    <!--<script src="https://aframe.io/releases/0.7.0/aframe.js"></script>-->
+	<script src="aframe082.js"></script>
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.3.1/aframe.min.js"></script>-->
+	
+	
+    <!--<script src="https://unpkg.com/aframe-animation-component/dist/aframe-animation-component.min.js"></script>-->
+	<!--<script src="./aframe-physics-system/v3.1.2/dist/aframe-physics-system.min.js"></script>-->
+    <!--<script src="./releases/0.8.2/aframe.min.js"></script>-->
+	<!--
+	<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script> 
+	<script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
+	-->
+	<script src="aframe-gif-shader.min.js"></script> 
+	<script src="aframe-gif-component.min.js"></script>
+	
+<script src="v3131distaframeextras.min.js"></script>
+<script src="aframe-environment-component.min.js"></script>
+<script src="aframe-animation-component.min.js"></script>
+	
+<!--
+<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+<script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+-->
+
+<!--
+<script src="v3131distaframeextras.min.js"></script>
+<script src="aframe-environment-component.min.js"></script>
+<script src="aframe-animation-component.min.js"></script>
+-->
+	
+  </head>
+  <body id="main_body">
+    <a-scene physics="" class="fullscreen" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" auto-enter-vr="">
+	  <a-assets>
+		<!--<img src="sphere.jpg" id="img-photosphere-1">-->
+		<!--<video id="video1" src="example.mp4" webkit-playsinline />-->
+		<img src="eye.png" id="eye">
+		<img src="eye1.png" id="eye1">
+		<img src="eye2.png" id="eye2">
+		<img src="eye3.png" id="eye3">
+		<img src="eye4.png" id="eye4">
+		
+		<img src="loading.gif" id="loading">
+		<img src="dinamik.png" id="dinamik">
+		<img src="touchscreen.png" id="touchscreen">
+		
+		
+		<img src="images/1.jpg" id="images_1">
+		<img src="images/2.jpg" id="images_2">
+	  </a-assets>
+	  
+	  
+	  
+	  
+	  <!--
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+	  -->
+	  
+		<!-- ОБЪЯСНЕНИЯ
+		по координатам
+		первая цифра - слева направо
+		вторая цифра - высота вверх вниз
+		третья цифра - сзади вперёд
+		
+		из-за градусов не запутаться в повортах лицевой стороной
+		
+		-->
+		
+		<!--
+		<a-obj-model id="model_tree_obj" src="#tree_obj" mtl="#tree_mtl" scale="0.001 0.001 0.001" position="3 0 0"></a-obj-model>
+		<a-obj-model src="#kekis" mtl="#kekis_mtl" position="-1.5 0 0" scale="0.01 0.01 0.01"></a-obj-model>
+		-->
+		
+		<!-- listener kinematic-body="" rotation="" scale="" visible="" velocity="" gamepad-controls="" keyboard-controls="" touch-controls="" hmd-controls="" mouse-controls="" -->
+		<!-- universal-controls="movementControls: checkpoint"  checkpoint-controls="mode: animate" -->
+	<a-entity id='cameraWrapper' position="0 0 0" rotation="0 -90 0">
+		<a-camera look-controls listener id="listener" >
+			<a-cursor id="idcursor" color="#FF0000" geometry="primitive: ring; radiusInner: 0.03; radiusOuter: 0.05" />
+		</a-camera>
+	</a-entity>
+	  
+    <!--<a-image position="0 0 0" rotation="270 0 0" width="4" height="4" src="coor.jpg"></a-image>-->
+	
+	<!--<a-sphere id="checkpoint0" position="0 10 20" checkpoint="offset: 0 0 0" scale="0.0001 0.0001 0.0001" rotation="0 0 0" color="#ffffff" opacity="0"></a-sphere>-->
+	  
+	  <!--
+      <a-sphere position="0 -2 -5" radius="1.25" material="shader: flat;" src="#sol" >
+		<a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="35000" repeat="indefinite" easing="linear"></a-animation></a-sphere>
+	  </a-sphere>
+	  -->
+	  
+      <!-- <a-entity geometry="primitive:sphere;radius:1000;segmentsWidth:32;segmentsHeight:32" material="shader:flat;color:#ffffff;fog:false; src:#img-photosphere-1" scale="-1 1 1" rotation="0 -90 0" id="photosphere"></a-entity>-->
+	  
+	  
+	  
+      <!--<a-sky color="#7fc7ff"></a-sky>-->
+	  
+	  <a-sky id="sky_1" material="shader:flat;color:#ffffff;fog:false; src:0.png;opacity:1;" radius="100" rotation="0 0 0" scale="-1 1 1"></a-sky>
+	  <a-sky id="sky_2" material="shader:flat;color:#ffffff;fog:false; src:0.png;opacity:0;" radius="99" rotation="0 275 0" scale="-1 1 1"></a-sky>
+	  
+	  <!--
+      <a-videosphere id="sky_1" rotation="0 275 0" src="#images_1" opacity="1"></a-videosphere>
+      <a-videosphere id="sky_2" rotation="0 0 0" src="coor.jpg" opacity="0"></a-videosphere>
+	  -->
+	 
+	 <!--
+	<a-sky id="sky_1" src="images/1.jpg" rotation="0 275 0"></a-sky>
+	<a-sky id="sky_2" src="0.png" rotation="0 275 0"></a-sky>
+	 -->
+	  <!--
+		<a-entity geometry="primitive:sphere;radius:20;segmentsWidth:32;segmentsHeight:32" material="shader:flat;color:#ffffff;fog:false; src:#images_1;opacity:1;" scale="-1 1 1" rotation="0 275 0" id="sky_1"></a-entity>
+		
+		<a-entity geometry="primitive:sphere;radius:19;segmentsWidth:32;segmentsHeight:32" material="shader:flat;color:#ffffff;fog:false; src:0.png;opacity:0;" scale="-1 1 1" rotation="0 0 0" id="sky_2"></a-entity>
+	  -->
+	  
+	  
+      <!--<a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>-->
+	  
+<!--
+<a-entity id="system_image_touchscreen">
+	<a-sky id="sky_start" material="shader:flat;color:#ffffff;fog:false; opacity:1;" radius="9" rotation="0 0 0" scale="-1 1 1"></a-sky>
+    <a-image id="image_touchscreen1" class="image_touchscreen" position="0 2 -4" rotation="0 0 0" width="2" height="2" src="#touchscreen" onclick="start_vr();"></a-image>
+    <a-image id="image_touchscreen2" class="image_touchscreen" position="4 2 0" rotation="0 -90 0" width="2" height="2" src="#touchscreen" onclick="start_vr();"></a-image>
+    <a-image id="image_touchscreen3" class="image_touchscreen" position="-4 2 0" rotation="0 -90 0" width="2" height="2" src="#touchscreen" onclick="start_vr();"></a-image>
+    <a-image id="image_touchscreen4" class="image_touchscreen" position="0 2 4" rotation="0 180 0" width="2" height="2" src="#touchscreen" onclick="start_vr();"></a-image>
+</a-entity>
+-->
+<script>
+//document.getElementById('image_touchscreen2').addEventListener('click', function () {start_vr();});
+/*
+function start_vr(){
+	$("#system_image_touchscreen").attr('opacity',"0");
+	var x = document.getElementById("system_image_touchscreen").getAttribute("position").x;
+	var y = document.getElementById("system_image_touchscreen").getAttribute("position").y;
+	var z = document.getElementById("system_image_touchscreen").getAttribute("position").z;
+	document.getElementById("system_image_touchscreen").setAttribute('position', {x: x, y: -1000, z: z});
+	document.getElementById('start_audio').play();
+}*/
+
+document.getElementById('main_body').addEventListener('dbclick', function () {
+//возврат в главное меню
+
+});
+
+</script>
+	
+		
+	<!-- Проходы для 1-ой точки -->
+<a-entity id="system_of_coordinates">
+	
+    <a-image id="e_1_2" opacity="0" class="e_1" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image>  
+    <a-image id="e_1_9" opacity="0" class="e_1" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image>
+	<a-image id="e_1_11" opacity="0" class="e_1" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+	
+    <!--<a-image id="e_1_11_270" class="e_1" position="0 1.25 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image>-->
+
+	<a-image id="a_1" opacity="0" class="e_1" position="4 1000 -10" rotation="0 0 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	
+	<a-image id="a_17" class="e_17" position="5 1000 -10" rotation="0 -45 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_19" class="e_19" position="-10 1000 5" rotation="0 135 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	
+	
+	<a-image id="a_23" class="e_23" position="10 1000 -4" rotation="0 -45 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_23_2" class="e_23" position="-4 1000 10" rotation="0 135 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_27" class="e_27" position="-10 1000 4" rotation="0 135 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_27_2" class="e_27" position="4 1000 -10" rotation="0 -45 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_30" class="e_30" position="10 1000 -4" rotation="0 -45 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_30_2" class="e_30" position="-4 1000 10" rotation="0 135 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_34" class="e_34" position="-10 1000 4" rotation="0 135 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_34_2" class="e_34" position="4 1000 -10" rotation="0 -45 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	
+	<a-image id="a_70" class="e_70" position="-10 1000 0" rotation="0 90 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_71" class="e_71" position="-10 1000 -6" rotation="0 45 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_80" class="e_80" position="-10 1000 -10" rotation="0 45 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_86" class="e_86" position="10 1000 0" rotation="0 -90 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_99" class="e_99" position="-10 1000 0" rotation="0 90 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	<a-image id="a_103" class="e_103" position="10 1000 0" rotation="0 -90 0" width="1.5" height="1.5" src="#dinamik"></a-image>
+	
+<!--
+	
+    <a-image id="e_2_4" opacity="0" class="e_2" position="2 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+    <a-image id="e_2_3" opacity="0" class="e_2" position="10 1000 -5" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+    <a-image id="e_2_1" opacity="0" class="e_2" position="-5 1000 8" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+	
+	
+    <a-image id="e_3_2" opacity="0" class="e_3" position="-10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image>
+    <a-image id="e_3_4" opacity="0" class="e_3" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+	
+	
+    <a-image id="e_4_2" opacity="0" class="e_4" position="-1 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+    <a-image id="e_4_10" opacity="0" class="e_4" position="-10 1000 -10" rotation="0 25 0" width="2" height="2" src="#eye"></a-image> 
+    <a-image id="e_4_6" opacity="0" class="e_4" position="-10 1000 0" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+	
+	
+    <a-image id="e_10_4" opacity="0" class="e_10" position="10 1000 10" rotation="0 -105 0" width="2" height="2" src="#eye"></a-image>
+    <a-image id="e_10_6" opacity="0" class="e_10" position="-10 1000 10" rotation="0 105 0" width="2" height="2" src="#eye"></a-image>
+	
+	
+    <a-image id="e_6_10" opacity="0" class="e_6" position="10 1000 -10" rotation="0 -30 0" width="2" height="2" src="#eye"></a-image>
+    <a-image id="e_6_4" opacity="0" class="e_6" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image>
+    <a-image id="e_6_8" opacity="0" class="e_6" position="-2 1000 10" rotation="0 165 0" width="2" height="2" src="#eye"></a-image>
+    <a-image id="e_6_9" opacity="0" class="e_6" position="2 1000 10" rotation="0 -165 0" width="2" height="2" src="#eye"></a-image>
+	
+	
+    <a-image id="e_8_6" opacity="0" class="e_8" position="2 1000 -10" rotation="0 -15 0" width="2" height="2" src="#eye"></a-image>
+    <a-image id="e_8_9" opacity="0" class="e_8" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image>
+	
+	
+    <a-image id="e_9_1" opacity="0" class="e_9" position="10 1000 10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image>
+    <a-image id="e_9_6" opacity="0" class="e_9" position="-2 1000 -10" rotation="0 15 0" width="2" height="2" src="#eye"></a-image>
+    <a-image id="e_9_8" opacity="0" class="e_9" position="-10 1000 0" rotation="0 90 0" width="2" height="2" src="#eye"></a-image>
+	
+	-->
+	
+	<!-- ДАЛЬШЕ АВТОМАТИКА -->
+<a-image id="e_2_4" opacity="0" class="e_2" position="2 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_2_3" opacity="0" class="e_2" position="10 1000 -5" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_2_1" opacity="0" class="e_2" position="-5 1000 8" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_3_2" opacity="0" class="e_3" position="-10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_3_4" opacity="0" class="e_3" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_4_2" opacity="0" class="e_4" position="-1 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_4_10" opacity="0" class="e_4" position="-10 1000 -10" rotation="0 25 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_4_6" opacity="0" class="e_4" position="-10 1000 0" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_10_4" opacity="0" class="e_10" position="10 1000 10" rotation="0 -105 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_10_6" opacity="0" class="e_10" position="-10 1000 10" rotation="0 105 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_6_10" opacity="0" class="e_6" position="10 1000 -10" rotation="0 -30 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_6_4" opacity="0" class="e_6" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_6_8" opacity="0" class="e_6" position="-4 1000 10" rotation="0 165 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_6_9" opacity="0" class="e_6" position="2 1000 10" rotation="0 -165 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_8_6" opacity="0" class="e_8" position="2 1000 -10" rotation="0 -15 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_8_9" opacity="0" class="e_8" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_9_1" opacity="0" class="e_9" position="10 1000 10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_9_6" opacity="0" class="e_9" position="-2 1000 -10" rotation="0 15 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_9_8" opacity="0" class="e_9" position="-10 1000 0" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_6_68" opacity="0" class="e_6" position="-10 1000 -2" rotation="0 75 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_68_112" opacity="0" class="e_68" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_112_68" opacity="0" class="e_112" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_112_113" opacity="0" class="e_112" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_112_69" opacity="0" class="e_112" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_113_112" opacity="0" class="e_113" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_69_112" opacity="0" class="e_69" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_69_94" opacity="0" class="e_69" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_94_69" opacity="0" class="e_94" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_94_95" opacity="0" class="e_94" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_95_94" opacity="0" class="e_95" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_113_99" opacity="0" class="e_113" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_99_113" opacity="0" class="e_99" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_99_100" opacity="0" class="e_99" position="-5 1000 10" rotation="0 155 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_100_99" opacity="0" class="e_100" position="5 1000 -10" rotation="0 -25 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_100_98" opacity="0" class="e_100" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_98_100" opacity="0" class="e_98" position="0 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_98_101" opacity="0" class="e_98" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_101_98" opacity="0" class="e_101" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_100_101" opacity="0" class="e_100" position="-10 1000 4" rotation="0 115 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_101_100" opacity="0" class="e_101" position="10 1000 -4" rotation="0 -65 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_101_103" opacity="0" class="e_101" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_103_101" opacity="0" class="e_103" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_103_104" opacity="0" class="e_103" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_104_103" opacity="0" class="e_104" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_99_98" opacity="0" class="e_99" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_98_99" opacity="0" class="e_98" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_69_91" opacity="0" class="e_69" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_91_69" opacity="0" class="e_91" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_91_96" opacity="0" class="e_91" position="-10 1000 5" rotation="0 115 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_96_91" opacity="0" class="e_96" position="10 1000 -5" rotation="0 -65 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_96_97" opacity="0" class="e_96" position="-10 1000 5" rotation="0 115 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_97_96" opacity="0" class="e_97" position="10 1000 -5" rotation="0 -65 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_97_105" opacity="0" class="e_97" position="-8 1000 -10" rotation="0 25 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_105_97" opacity="0" class="e_105" position="8 1000 10" rotation="0 -155 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_105_98" opacity="0" class="e_105" position="-3 1000 10" rotation="0 165 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_98_105" opacity="0" class="e_98" position="5 1000 -10" rotation="0 -25 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_105_70" opacity="0" class="e_105" position="-10 1000 3" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_70_105" opacity="0" class="e_70" position="10 1000 -4" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_91_92" opacity="0" class="e_91" position="-8 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_92_91" opacity="0" class="e_92" position="8 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_92_93" opacity="0" class="e_92" position="-10 1000 9" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_93_92" opacity="0" class="e_93" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_70_75" opacity="0" class="e_70" position="-7 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_75_70" opacity="0" class="e_75" position="9 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_75_74" opacity="0" class="e_75" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_74_75" opacity="0" class="e_74" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_74_102" opacity="0" class="e_74" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_102_74" opacity="0" class="e_102" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_102_101" opacity="0" class="e_102" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_101_102" opacity="0" class="e_101" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_74_73" opacity="0" class="e_74" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_73_74" opacity="0" class="e_73" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_73_72" opacity="0" class="e_73" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_72_73" opacity="0" class="e_72" position="0 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_72_71" opacity="0" class="e_72" position="10 1000 -9" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_71_72" opacity="0" class="e_71" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_71_76" opacity="0" class="e_71" position="-9 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_76_71" opacity="0" class="e_76" position="10 1000 5" rotation="0 -115 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_76_77" opacity="0" class="e_76" position="-9 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_77_76" opacity="0" class="e_77" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_76_79" opacity="0" class="e_76" position="9 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_79_76" opacity="0" class="e_79" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_71_70" opacity="0" class="e_71" position="10 1000 5" rotation="0 -115 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_70_71" opacity="0" class="e_70" position="-10 1000 -6" rotation="0 65 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_94_109" opacity="0" class="e_94" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_109_94" opacity="0" class="e_109" position="10 1000 -8" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_109_108" opacity="0" class="e_109" position="-5 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_108_109" opacity="0" class="e_108" position="5 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_109_110" opacity="0" class="e_109" position="10 1000 8" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_110_109" opacity="0" class="e_110" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_110_111" opacity="0" class="e_110" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_111_110" opacity="0" class="e_111" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_108_106" opacity="0" class="e_108" position="-2 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_106_108" opacity="0" class="e_106" position="2 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_106_105" opacity="0" class="e_106" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_105_106" opacity="0" class="e_105" position="-10 1000 -8" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_106_107" opacity="0" class="e_106" position="-8 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_107_106" opacity="0" class="e_107" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_107_80" opacity="0" class="e_107" position="-10 1000 -7" rotation="0 35 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_80_107" opacity="0" class="e_80" position="10 1000 8" rotation="0 -115 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_80_71" opacity="0" class="e_80" position="-5 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_71_80" opacity="0" class="e_71" position="9 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_4_81" opacity="0" class="e_4" position="10 1000 7" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_81_4" opacity="0" class="e_81" position="-10 1000 0" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_81_82" opacity="0" class="e_81" position="10 1000 9" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_82_81" opacity="0" class="e_82" position="-10 1000 -9" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_82_84" opacity="0" class="e_82" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_84_82" opacity="0" class="e_84" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_84_86" opacity="0" class="e_84" position="10 1000 7" rotation="0 -115 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_86_84" opacity="0" class="e_86" position="-10 1000 -8" rotation="0 35 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_86_87" opacity="0" class="e_86" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_87_86" opacity="0" class="e_87" position="-8 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_87_88" opacity="0" class="e_87" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_88_87" opacity="0" class="e_88" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_88_89" opacity="0" class="e_88" position="10 1000 2" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_89_88" opacity="0" class="e_89" position="-10 1000 -2" rotation="0 65 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_89_90" opacity="0" class="e_89" position="-3 1000 -10" rotation="0 25 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_90_89" opacity="0" class="e_90" position="3 1000 10" rotation="0 -155 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_88_90" opacity="0" class="e_88" position="7 1000 -10" rotation="0 -25 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_90_88" opacity="0" class="e_90" position="-7 1000 10" rotation="0 155 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_90_87" opacity="0" class="e_90" position="-10 1000 3" rotation="0 115 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_87_90" opacity="0" class="e_87" position="10 1000 -3" rotation="0 -65 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_11_1" opacity="0" class="e_11" position="0 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_11_14" opacity="0" class="e_11" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_14_11" opacity="0" class="e_14" position="0 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_14_13" opacity="0" class="e_14" position="10 1000 6" rotation="0 -115 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_13_14" opacity="0" class="e_13" position="-10 1000 -7" rotation="0 65 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_13_17" opacity="0" class="e_13" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_17_13" opacity="0" class="e_17" position="-10 1000 -1" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_17_18" opacity="0" class="e_17" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_18_17" opacity="0" class="e_18" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_18_19" opacity="0" class="e_18" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_19_18" opacity="0" class="e_19" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_19_21" opacity="0" class="e_19" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_21_19" opacity="0" class="e_21" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_19_22" opacity="0" class="e_19" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_22_19" opacity="0" class="e_22" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_18_23" opacity="0" class="e_18" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_23_18" opacity="0" class="e_23" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_23_25" opacity="0" class="e_23" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_25_23" opacity="0" class="e_25" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_23_24" opacity="0" class="e_23" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_24_23" opacity="0" class="e_24" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_18_26" opacity="0" class="e_18" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_26_18" opacity="0" class="e_26" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_26_30" opacity="0" class="e_26" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_30_26" opacity="0" class="e_30" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_30_31" opacity="0" class="e_30" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_31_30" opacity="0" class="e_31" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_30_32" opacity="0" class="e_30" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_32_30" opacity="0" class="e_32" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_26_27" opacity="0" class="e_26" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_27_26" opacity="0" class="e_27" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_27_29" opacity="0" class="e_27" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_29_27" opacity="0" class="e_29" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_27_28" opacity="0" class="e_27" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_28_27" opacity="0" class="e_28" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_26_33" opacity="0" class="e_26" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_33_26" opacity="0" class="e_33" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_33_34" opacity="0" class="e_33" position="-10 1000 -10" rotation="0 45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_34_33" opacity="0" class="e_34" position="10 1000 10" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_34_35" opacity="0" class="e_34" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_35_34" opacity="0" class="e_35" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_34_36" opacity="0" class="e_34" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_36_34" opacity="0" class="e_36" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_33_41" opacity="0" class="e_33" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_41_33" opacity="0" class="e_41" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_41_40" opacity="0" class="e_41" position="10 1000 -10" rotation="0 -45 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_40_41" opacity="0" class="e_40" position="-10 1000 10" rotation="0 135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_41_39" opacity="0" class="e_41" position="10 1000 3" rotation="0 -115 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_39_41" opacity="0" class="e_39" position="-10 1000 -3" rotation="0 70 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_41_38" opacity="0" class="e_41" position="-2 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_38_41" opacity="0" class="e_38" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_40_39" opacity="0" class="e_40" position="3 1000 10" rotation="0 -155 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_39_40" opacity="0" class="e_39" position="-3 1000 -10" rotation="0 25 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_39_38" opacity="0" class="e_39" position="-10 1000 7" rotation="0 115 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_38_39" opacity="0" class="e_38" position="10 1000 -7" rotation="0 -65 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_41_42" opacity="0" class="e_41" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_42_41" opacity="0" class="e_42" position="0 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_42_46" opacity="0" class="e_42" position="-10 1000 0" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_46_42" opacity="0" class="e_46" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_46_47" opacity="0" class="e_46" position="-3 1000 10" rotation="0 165 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_47_46" opacity="0" class="e_47" position="3 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_46_48" opacity="0" class="e_46" position="-3 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_48_46" opacity="0" class="e_48" position="3 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_42_43" opacity="0" class="e_42" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_43_42" opacity="0" class="e_43" position="-10 1000 0" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_43_45" opacity="0" class="e_43" position="3 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_45_43" opacity="0" class="e_45" position="-3 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_43_44" opacity="0" class="e_43" position="3 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_44_43" opacity="0" class="e_44" position="-3 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_42_49" opacity="0" class="e_42" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_49_42" opacity="0" class="e_49" position="0 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_49_53" opacity="0" class="e_49" position="-10 1000 0" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_53_49" opacity="0" class="e_53" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_53_54" opacity="0" class="e_53" position="-5 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_54_53" opacity="0" class="e_54" position="5 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_53_55" opacity="0" class="e_53" position="-5 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_55_53" opacity="0" class="e_55" position="5 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_49_50" opacity="0" class="e_49" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_50_49" opacity="0" class="e_50" position="-10 1000 0" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_50_51" opacity="0" class="e_50" position="5 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_51_50" opacity="0" class="e_51" position="-5 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_50_52" opacity="0" class="e_50" position="5 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_52_50" opacity="0" class="e_52" position="-5 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_49_56" opacity="0" class="e_49" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_56_49" opacity="0" class="e_56" position="0 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_56_60" opacity="0" class="e_56" position="-10 1000 0" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_60_56" opacity="0" class="e_60" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_60_61" opacity="0" class="e_60" position="-4 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_61_60" opacity="0" class="e_61" position="4 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_60_62" opacity="0" class="e_60" position="-4 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_62_60" opacity="0" class="e_62" position="4 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_56_57" opacity="0" class="e_56" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_57_56" opacity="0" class="e_57" position="-10 1000 0" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_57_59" opacity="0" class="e_57" position="4 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_59_57" opacity="0" class="e_59" position="-4 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_57_58" opacity="0" class="e_57" position="4 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_58_57" opacity="0" class="e_58" position="-4 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_56_63" opacity="0" class="e_56" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_63_56" opacity="0" class="e_63" position="0 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_63_64" opacity="0" class="e_63" position="-10 1000 0" rotation="0 90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_64_63" opacity="0" class="e_64" position="10 1000 0" rotation="0 -90 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_64_65" opacity="0" class="e_64" position="-4 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_65_64" opacity="0" class="e_65" position="4 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_64_66" opacity="0" class="e_64" position="-4 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_66_64" opacity="0" class="e_66" position="4 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_63_117" opacity="0" class="e_63" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_114_115" opacity="0" class="e_114" position="10 1000 8" rotation="0 -135 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_115_114" opacity="0" class="e_115" position="-3 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_117_63" opacity="0" class="e_117" position="0 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_117_118" opacity="0" class="e_117" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_118_117" opacity="0" class="e_118" position="0 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_118_114" opacity="0" class="e_118" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_114_118" opacity="0" class="e_114" position="0 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_115_116" opacity="0" class="e_115" position="0 1000 10" rotation="0 180 0" width="2" height="2" src="#eye"></a-image> 
+<a-image id="e_116_115" opacity="0" class="e_116" position="0 1000 -10" rotation="0 0 0" width="2" height="2" src="#eye"></a-image> 
+	
+	
+	
+	
+</a-entity>
+	
+	  <!--
+      <a-image id="start_image2" position="0 11.6 18.6" rotation="0 0 0" width="2.8" height="4" src="start2.jpg"></a-image>
+      <a-image id="start_image1" position="1.4 11.6 20" rotation="0 90 0" width="2.8" height="4" src="start1.jpg"></a-image>
+      <a-image id="start_image3" position="-1.4 11.6 20" rotation="0 -90 0" width="2.8" height="4" src="start1.jpg"></a-image>
+	  -->
+	  
+	  
+
+    </a-scene>
+	
+	<div class="row" style="position:absolute;top:10px;left:10px;" aframe-injected>
+		<button id="save_and_exit" style="background-color:#d9534f;border-color:#d43f3a;color:#fff;border:none;padding:8px;font-weight:normal;border-radius: 4px;font-size:10px;" onclick="Android.save_and_exit('Прогресс сохранён');">СОХРАНИТЬ И ВЫЙТИ</button>
+	</div>
+	
+	<script src="js/jquery-1.11.1.min.js"></script>
+	
+	<input id="travel" type="number" value="0" style="display:none;" />
+	<input id="already_launching_travel" type="number" value="0" style="display:none;" />
+	<input id="change_sky" value="0" style="display:none;" />
+	<input id="actual_sky" value="1" style="display:none;" />
+	
+	<input id="actual_image" value="1" style="display:none;" />
+	
+	<script>
+	
+	//var basic_degrees = [0,275,204,320,347,40,166,"Номер 7",85,105,50,265,140,125,145,283,23,26,113,186,"Номер 20",239,159,128,175,49,15,199,231,125,17,50,288,258,296,293,175,324,335,310,4,62,119,149,239,138,332,95,242,238,265,11,106,211,284,138,199,148,183,80,327,115,311,295,330,46,243,248,254,43,110,108,170,341,83,145,147,179,237,251,140,39,347,208,208,30,30,232,337,52,38,284,70,130,296,203,138,71,292,330,253,226,319,56,106,191,254,94,357,198,291,286,57,104,26,350,79,113,228];
+	//var basic_degrees = [0,275,204,320,347,40,166,"Номер 7",85,105,50,265,140,125,145,283,23,26,113,186,"Номер 20",239,159,128,175,49,15,199,231,125,17,50,288,258,296,293,175,324,335,310,4,62,119,149,239,138,332,95,242,238,265,11,106,211,284,138,120,148,183,80,327,115,311,295,330,46,243,248,254,43,110,108,170,341,83,145,147,179,237,251,140,39,347,208,208,30,30,232,337,52,38,284,70,130,296,203,138,71,292,330,253,226,319,56,106,191,254,94,357,198,291,286,57,104,347,350,79,113,228];
+	var basic_degrees = [0,275,204,320,347,40,166,"Номер 7",85,105,50,265,140,125,145,283,23,26,113,186,"Номер 20",239,159,128,175,49,15,17,50,288,199,231,125,258,296,293,175,324,335,310,4,62,119,149,239,138,332,95,242,238,265,11,106,211,284,138,120,148,183,80,327,115,311,295,330,46,243,248,254,43,110,108,170,341,83,145,147,179,237,251,140,39,347,208,208,30,30,232,337,52,38,284,70,130,296,203,138,71,292,330,253,226,319,56,106,191,254,94,357,198,291,286,57,104,347,350,79,113,228];
+	
+	document.getElementById('e_1_2').addEventListener('mouseenter', function () {eye_change('e_1_2');});
+	document.getElementById('e_1_2').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_1_9').addEventListener('mouseenter', function () {eye_change('e_1_9');});
+	document.getElementById('e_1_9').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	
+	/*
+	document.getElementById('e_1_11_270').addEventListener('mouseenter', function () {eye_change('e_1_11_270');});
+	document.getElementById('e_1_11_270').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	*/
+	
+	function getUrlVars() {
+	var vars = {};
+	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+	vars[key] = value;
+	});
+	return vars;
+	}
+	
+	
+	/*
+	document.getElementById('e_2_3').addEventListener('mouseenter', function () {eye_change('e_2_3');});
+	document.getElementById('e_2_3').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_2_4').addEventListener('mouseenter', function () {eye_change('e_2_4');});
+	document.getElementById('e_2_4').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_2_1').addEventListener('mouseenter', function () {eye_change('e_2_1');});
+	document.getElementById('e_2_1').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	
+	
+	document.getElementById('e_3_2').addEventListener('mouseenter', function () {eye_change('e_3_2');});
+	document.getElementById('e_3_2').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_3_4').addEventListener('mouseenter', function () {eye_change('e_3_4');});
+	document.getElementById('e_3_4').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	
+	
+	document.getElementById('e_4_2').addEventListener('mouseenter', function () {eye_change('e_4_2');});
+	document.getElementById('e_4_2').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_4_10').addEventListener('mouseenter', function () {eye_change('e_4_10');});
+	document.getElementById('e_4_10').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_4_6').addEventListener('mouseenter', function () {eye_change('e_4_6');});
+	document.getElementById('e_4_6').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	
+	
+	
+	document.getElementById('e_10_4').addEventListener('mouseenter', function () {eye_change('e_10_4');});
+	document.getElementById('e_10_4').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_10_6').addEventListener('mouseenter', function () {eye_change('e_10_6');});
+	document.getElementById('e_10_6').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	
+	
+	
+	document.getElementById('e_6_10').addEventListener('mouseenter', function () {eye_change('e_6_10');});
+	document.getElementById('e_6_10').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_6_4').addEventListener('mouseenter', function () {eye_change('e_6_4');});
+	document.getElementById('e_6_4').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_6_8').addEventListener('mouseenter', function () {eye_change('e_6_8');});
+	document.getElementById('e_6_8').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_6_9').addEventListener('mouseenter', function () {eye_change('e_6_9');});
+	document.getElementById('e_6_9').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	
+	
+	document.getElementById('e_8_6').addEventListener('mouseenter', function () {eye_change('e_8_6');});
+	document.getElementById('e_8_6').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_8_9').addEventListener('mouseenter', function () {eye_change('e_8_9');});
+	document.getElementById('e_8_9').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	
+	
+	document.getElementById('e_9_1').addEventListener('mouseenter', function () {eye_change('e_9_1');});
+	document.getElementById('e_9_1').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_9_6').addEventListener('mouseenter', function () {eye_change('e_9_6');});
+	document.getElementById('e_9_6').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	document.getElementById('e_9_8').addEventListener('mouseenter', function () {eye_change('e_9_8');});
+	document.getElementById('e_9_8').addEventListener('mouseleave', function () {$("#travel").val("0");});
+	*/
+document.getElementById('e_2_4').addEventListener('mouseenter', function () {eye_change('e_2_4');});
+document.getElementById('e_2_4').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_2_3').addEventListener('mouseenter', function () {eye_change('e_2_3');});
+document.getElementById('e_2_3').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_2_1').addEventListener('mouseenter', function () {eye_change('e_2_1');});
+document.getElementById('e_2_1').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_3_2').addEventListener('mouseenter', function () {eye_change('e_3_2');});
+document.getElementById('e_3_2').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_3_4').addEventListener('mouseenter', function () {eye_change('e_3_4');});
+document.getElementById('e_3_4').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_4_2').addEventListener('mouseenter', function () {eye_change('e_4_2');});
+document.getElementById('e_4_2').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_4_10').addEventListener('mouseenter', function () {eye_change('e_4_10');});
+document.getElementById('e_4_10').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_4_6').addEventListener('mouseenter', function () {eye_change('e_4_6');});
+document.getElementById('e_4_6').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_10_4').addEventListener('mouseenter', function () {eye_change('e_10_4');});
+document.getElementById('e_10_4').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_10_6').addEventListener('mouseenter', function () {eye_change('e_10_6');});
+document.getElementById('e_10_6').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_6_10').addEventListener('mouseenter', function () {eye_change('e_6_10');});
+document.getElementById('e_6_10').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_6_4').addEventListener('mouseenter', function () {eye_change('e_6_4');});
+document.getElementById('e_6_4').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_6_8').addEventListener('mouseenter', function () {eye_change('e_6_8');});
+document.getElementById('e_6_8').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_6_9').addEventListener('mouseenter', function () {eye_change('e_6_9');});
+document.getElementById('e_6_9').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_8_6').addEventListener('mouseenter', function () {eye_change('e_8_6');});
+document.getElementById('e_8_6').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_8_9').addEventListener('mouseenter', function () {eye_change('e_8_9');});
+document.getElementById('e_8_9').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_9_1').addEventListener('mouseenter', function () {eye_change('e_9_1');});
+document.getElementById('e_9_1').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_9_6').addEventListener('mouseenter', function () {eye_change('e_9_6');});
+document.getElementById('e_9_6').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_9_8').addEventListener('mouseenter', function () {eye_change('e_9_8');});
+document.getElementById('e_9_8').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_6_68').addEventListener('mouseenter', function () {eye_change('e_6_68');});
+document.getElementById('e_6_68').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_68_112').addEventListener('mouseenter', function () {eye_change('e_68_112');});
+document.getElementById('e_68_112').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_112_68').addEventListener('mouseenter', function () {eye_change('e_112_68');});
+document.getElementById('e_112_68').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_112_113').addEventListener('mouseenter', function () {eye_change('e_112_113');});
+document.getElementById('e_112_113').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_112_69').addEventListener('mouseenter', function () {eye_change('e_112_69');});
+document.getElementById('e_112_69').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_113_112').addEventListener('mouseenter', function () {eye_change('e_113_112');});
+document.getElementById('e_113_112').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_69_112').addEventListener('mouseenter', function () {eye_change('e_69_112');});
+document.getElementById('e_69_112').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_69_94').addEventListener('mouseenter', function () {eye_change('e_69_94');});
+document.getElementById('e_69_94').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_94_69').addEventListener('mouseenter', function () {eye_change('e_94_69');});
+document.getElementById('e_94_69').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_94_95').addEventListener('mouseenter', function () {eye_change('e_94_95');});
+document.getElementById('e_94_95').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_95_94').addEventListener('mouseenter', function () {eye_change('e_95_94');});
+document.getElementById('e_95_94').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_113_99').addEventListener('mouseenter', function () {eye_change('e_113_99');});
+document.getElementById('e_113_99').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_99_113').addEventListener('mouseenter', function () {eye_change('e_99_113');});
+document.getElementById('e_99_113').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_99_100').addEventListener('mouseenter', function () {eye_change('e_99_100');});
+document.getElementById('e_99_100').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_100_99').addEventListener('mouseenter', function () {eye_change('e_100_99');});
+document.getElementById('e_100_99').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_100_98').addEventListener('mouseenter', function () {eye_change('e_100_98');});
+document.getElementById('e_100_98').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_98_100').addEventListener('mouseenter', function () {eye_change('e_98_100');});
+document.getElementById('e_98_100').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_98_101').addEventListener('mouseenter', function () {eye_change('e_98_101');});
+document.getElementById('e_98_101').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_101_98').addEventListener('mouseenter', function () {eye_change('e_101_98');});
+document.getElementById('e_101_98').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_100_101').addEventListener('mouseenter', function () {eye_change('e_100_101');});
+document.getElementById('e_100_101').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_101_100').addEventListener('mouseenter', function () {eye_change('e_101_100');});
+document.getElementById('e_101_100').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_101_103').addEventListener('mouseenter', function () {eye_change('e_101_103');});
+document.getElementById('e_101_103').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_103_101').addEventListener('mouseenter', function () {eye_change('e_103_101');});
+document.getElementById('e_103_101').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_103_104').addEventListener('mouseenter', function () {eye_change('e_103_104');});
+document.getElementById('e_103_104').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_104_103').addEventListener('mouseenter', function () {eye_change('e_104_103');});
+document.getElementById('e_104_103').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_99_98').addEventListener('mouseenter', function () {eye_change('e_99_98');});
+document.getElementById('e_99_98').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_98_99').addEventListener('mouseenter', function () {eye_change('e_98_99');});
+document.getElementById('e_98_99').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_69_91').addEventListener('mouseenter', function () {eye_change('e_69_91');});
+document.getElementById('e_69_91').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_91_69').addEventListener('mouseenter', function () {eye_change('e_91_69');});
+document.getElementById('e_91_69').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_91_96').addEventListener('mouseenter', function () {eye_change('e_91_96');});
+document.getElementById('e_91_96').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_96_91').addEventListener('mouseenter', function () {eye_change('e_96_91');});
+document.getElementById('e_96_91').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_96_97').addEventListener('mouseenter', function () {eye_change('e_96_97');});
+document.getElementById('e_96_97').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_97_96').addEventListener('mouseenter', function () {eye_change('e_97_96');});
+document.getElementById('e_97_96').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_97_105').addEventListener('mouseenter', function () {eye_change('e_97_105');});
+document.getElementById('e_97_105').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_105_97').addEventListener('mouseenter', function () {eye_change('e_105_97');});
+document.getElementById('e_105_97').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_105_98').addEventListener('mouseenter', function () {eye_change('e_105_98');});
+document.getElementById('e_105_98').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_98_105').addEventListener('mouseenter', function () {eye_change('e_98_105');});
+document.getElementById('e_98_105').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_105_70').addEventListener('mouseenter', function () {eye_change('e_105_70');});
+document.getElementById('e_105_70').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_70_105').addEventListener('mouseenter', function () {eye_change('e_70_105');});
+document.getElementById('e_70_105').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_91_92').addEventListener('mouseenter', function () {eye_change('e_91_92');});
+document.getElementById('e_91_92').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_92_91').addEventListener('mouseenter', function () {eye_change('e_92_91');});
+document.getElementById('e_92_91').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_92_93').addEventListener('mouseenter', function () {eye_change('e_92_93');});
+document.getElementById('e_92_93').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_93_92').addEventListener('mouseenter', function () {eye_change('e_93_92');});
+document.getElementById('e_93_92').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_70_75').addEventListener('mouseenter', function () {eye_change('e_70_75');});
+document.getElementById('e_70_75').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_75_70').addEventListener('mouseenter', function () {eye_change('e_75_70');});
+document.getElementById('e_75_70').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_75_74').addEventListener('mouseenter', function () {eye_change('e_75_74');});
+document.getElementById('e_75_74').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_74_75').addEventListener('mouseenter', function () {eye_change('e_74_75');});
+document.getElementById('e_74_75').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_74_102').addEventListener('mouseenter', function () {eye_change('e_74_102');});
+document.getElementById('e_74_102').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_102_74').addEventListener('mouseenter', function () {eye_change('e_102_74');});
+document.getElementById('e_102_74').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_102_101').addEventListener('mouseenter', function () {eye_change('e_102_101');});
+document.getElementById('e_102_101').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_101_102').addEventListener('mouseenter', function () {eye_change('e_101_102');});
+document.getElementById('e_101_102').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_74_73').addEventListener('mouseenter', function () {eye_change('e_74_73');});
+document.getElementById('e_74_73').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_73_74').addEventListener('mouseenter', function () {eye_change('e_73_74');});
+document.getElementById('e_73_74').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_73_72').addEventListener('mouseenter', function () {eye_change('e_73_72');});
+document.getElementById('e_73_72').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_72_73').addEventListener('mouseenter', function () {eye_change('e_72_73');});
+document.getElementById('e_72_73').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_72_71').addEventListener('mouseenter', function () {eye_change('e_72_71');});
+document.getElementById('e_72_71').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_71_72').addEventListener('mouseenter', function () {eye_change('e_71_72');});
+document.getElementById('e_71_72').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_71_76').addEventListener('mouseenter', function () {eye_change('e_71_76');});
+document.getElementById('e_71_76').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_76_71').addEventListener('mouseenter', function () {eye_change('e_76_71');});
+document.getElementById('e_76_71').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_76_77').addEventListener('mouseenter', function () {eye_change('e_76_77');});
+document.getElementById('e_76_77').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_77_76').addEventListener('mouseenter', function () {eye_change('e_77_76');});
+document.getElementById('e_77_76').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_76_79').addEventListener('mouseenter', function () {eye_change('e_76_79');});
+document.getElementById('e_76_79').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_79_76').addEventListener('mouseenter', function () {eye_change('e_79_76');});
+document.getElementById('e_79_76').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_71_70').addEventListener('mouseenter', function () {eye_change('e_71_70');});
+document.getElementById('e_71_70').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_70_71').addEventListener('mouseenter', function () {eye_change('e_70_71');});
+document.getElementById('e_70_71').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_94_109').addEventListener('mouseenter', function () {eye_change('e_94_109');});
+document.getElementById('e_94_109').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_109_94').addEventListener('mouseenter', function () {eye_change('e_109_94');});
+document.getElementById('e_109_94').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_109_108').addEventListener('mouseenter', function () {eye_change('e_109_108');});
+document.getElementById('e_109_108').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_108_109').addEventListener('mouseenter', function () {eye_change('e_108_109');});
+document.getElementById('e_108_109').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_109_110').addEventListener('mouseenter', function () {eye_change('e_109_110');});
+document.getElementById('e_109_110').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_110_109').addEventListener('mouseenter', function () {eye_change('e_110_109');});
+document.getElementById('e_110_109').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_110_111').addEventListener('mouseenter', function () {eye_change('e_110_111');});
+document.getElementById('e_110_111').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_111_110').addEventListener('mouseenter', function () {eye_change('e_111_110');});
+document.getElementById('e_111_110').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_108_106').addEventListener('mouseenter', function () {eye_change('e_108_106');});
+document.getElementById('e_108_106').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_106_108').addEventListener('mouseenter', function () {eye_change('e_106_108');});
+document.getElementById('e_106_108').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_106_105').addEventListener('mouseenter', function () {eye_change('e_106_105');});
+document.getElementById('e_106_105').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_105_106').addEventListener('mouseenter', function () {eye_change('e_105_106');});
+document.getElementById('e_105_106').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_106_107').addEventListener('mouseenter', function () {eye_change('e_106_107');});
+document.getElementById('e_106_107').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_107_106').addEventListener('mouseenter', function () {eye_change('e_107_106');});
+document.getElementById('e_107_106').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_107_80').addEventListener('mouseenter', function () {eye_change('e_107_80');});
+document.getElementById('e_107_80').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_80_107').addEventListener('mouseenter', function () {eye_change('e_80_107');});
+document.getElementById('e_80_107').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_80_71').addEventListener('mouseenter', function () {eye_change('e_80_71');});
+document.getElementById('e_80_71').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_71_80').addEventListener('mouseenter', function () {eye_change('e_71_80');});
+document.getElementById('e_71_80').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_4_81').addEventListener('mouseenter', function () {eye_change('e_4_81');});
+document.getElementById('e_4_81').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_81_4').addEventListener('mouseenter', function () {eye_change('e_81_4');});
+document.getElementById('e_81_4').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_81_82').addEventListener('mouseenter', function () {eye_change('e_81_82');});
+document.getElementById('e_81_82').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_82_81').addEventListener('mouseenter', function () {eye_change('e_82_81');});
+document.getElementById('e_82_81').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_82_84').addEventListener('mouseenter', function () {eye_change('e_82_84');});
+document.getElementById('e_82_84').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_84_82').addEventListener('mouseenter', function () {eye_change('e_84_82');});
+document.getElementById('e_84_82').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_84_86').addEventListener('mouseenter', function () {eye_change('e_84_86');});
+document.getElementById('e_84_86').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_86_84').addEventListener('mouseenter', function () {eye_change('e_86_84');});
+document.getElementById('e_86_84').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_86_87').addEventListener('mouseenter', function () {eye_change('e_86_87');});
+document.getElementById('e_86_87').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_87_86').addEventListener('mouseenter', function () {eye_change('e_87_86');});
+document.getElementById('e_87_86').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_87_88').addEventListener('mouseenter', function () {eye_change('e_87_88');});
+document.getElementById('e_87_88').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_88_87').addEventListener('mouseenter', function () {eye_change('e_88_87');});
+document.getElementById('e_88_87').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_88_89').addEventListener('mouseenter', function () {eye_change('e_88_89');});
+document.getElementById('e_88_89').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_89_88').addEventListener('mouseenter', function () {eye_change('e_89_88');});
+document.getElementById('e_89_88').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_89_90').addEventListener('mouseenter', function () {eye_change('e_89_90');});
+document.getElementById('e_89_90').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_90_89').addEventListener('mouseenter', function () {eye_change('e_90_89');});
+document.getElementById('e_90_89').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_88_90').addEventListener('mouseenter', function () {eye_change('e_88_90');});
+document.getElementById('e_88_90').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_90_88').addEventListener('mouseenter', function () {eye_change('e_90_88');});
+document.getElementById('e_90_88').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_90_87').addEventListener('mouseenter', function () {eye_change('e_90_87');});
+document.getElementById('e_90_87').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_87_90').addEventListener('mouseenter', function () {eye_change('e_87_90');});
+document.getElementById('e_87_90').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_1_11').addEventListener('mouseenter', function () {eye_change('e_1_11');});
+document.getElementById('e_1_11').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_11_1').addEventListener('mouseenter', function () {eye_change('e_11_1');});
+document.getElementById('e_11_1').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_11_14').addEventListener('mouseenter', function () {eye_change('e_11_14');});
+document.getElementById('e_11_14').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_14_11').addEventListener('mouseenter', function () {eye_change('e_14_11');});
+document.getElementById('e_14_11').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_14_13').addEventListener('mouseenter', function () {eye_change('e_14_13');});
+document.getElementById('e_14_13').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_13_14').addEventListener('mouseenter', function () {eye_change('e_13_14');});
+document.getElementById('e_13_14').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_13_17').addEventListener('mouseenter', function () {eye_change('e_13_17');});
+document.getElementById('e_13_17').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_17_13').addEventListener('mouseenter', function () {eye_change('e_17_13');});
+document.getElementById('e_17_13').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_17_18').addEventListener('mouseenter', function () {eye_change('e_17_18');});
+document.getElementById('e_17_18').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_18_17').addEventListener('mouseenter', function () {eye_change('e_18_17');});
+document.getElementById('e_18_17').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_18_19').addEventListener('mouseenter', function () {eye_change('e_18_19');});
+document.getElementById('e_18_19').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_19_18').addEventListener('mouseenter', function () {eye_change('e_19_18');});
+document.getElementById('e_19_18').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_19_21').addEventListener('mouseenter', function () {eye_change('e_19_21');});
+document.getElementById('e_19_21').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_21_19').addEventListener('mouseenter', function () {eye_change('e_21_19');});
+document.getElementById('e_21_19').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_19_22').addEventListener('mouseenter', function () {eye_change('e_19_22');});
+document.getElementById('e_19_22').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_22_19').addEventListener('mouseenter', function () {eye_change('e_22_19');});
+document.getElementById('e_22_19').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_18_23').addEventListener('mouseenter', function () {eye_change('e_18_23');});
+document.getElementById('e_18_23').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_23_18').addEventListener('mouseenter', function () {eye_change('e_23_18');});
+document.getElementById('e_23_18').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_23_25').addEventListener('mouseenter', function () {eye_change('e_23_25');});
+document.getElementById('e_23_25').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_25_23').addEventListener('mouseenter', function () {eye_change('e_25_23');});
+document.getElementById('e_25_23').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_23_24').addEventListener('mouseenter', function () {eye_change('e_23_24');});
+document.getElementById('e_23_24').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_24_23').addEventListener('mouseenter', function () {eye_change('e_24_23');});
+document.getElementById('e_24_23').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_18_26').addEventListener('mouseenter', function () {eye_change('e_18_26');});
+document.getElementById('e_18_26').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_26_18').addEventListener('mouseenter', function () {eye_change('e_26_18');});
+document.getElementById('e_26_18').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_26_30').addEventListener('mouseenter', function () {eye_change('e_26_30');});
+document.getElementById('e_26_30').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_30_26').addEventListener('mouseenter', function () {eye_change('e_30_26');});
+document.getElementById('e_30_26').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_30_31').addEventListener('mouseenter', function () {eye_change('e_30_31');});
+document.getElementById('e_30_31').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_31_30').addEventListener('mouseenter', function () {eye_change('e_31_30');});
+document.getElementById('e_31_30').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_30_32').addEventListener('mouseenter', function () {eye_change('e_30_32');});
+document.getElementById('e_30_32').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_32_30').addEventListener('mouseenter', function () {eye_change('e_32_30');});
+document.getElementById('e_32_30').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_26_27').addEventListener('mouseenter', function () {eye_change('e_26_27');});
+document.getElementById('e_26_27').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_27_26').addEventListener('mouseenter', function () {eye_change('e_27_26');});
+document.getElementById('e_27_26').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_27_29').addEventListener('mouseenter', function () {eye_change('e_27_29');});
+document.getElementById('e_27_29').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_29_27').addEventListener('mouseenter', function () {eye_change('e_29_27');});
+document.getElementById('e_29_27').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_27_28').addEventListener('mouseenter', function () {eye_change('e_27_28');});
+document.getElementById('e_27_28').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_28_27').addEventListener('mouseenter', function () {eye_change('e_28_27');});
+document.getElementById('e_28_27').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_26_33').addEventListener('mouseenter', function () {eye_change('e_26_33');});
+document.getElementById('e_26_33').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_33_26').addEventListener('mouseenter', function () {eye_change('e_33_26');});
+document.getElementById('e_33_26').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_33_34').addEventListener('mouseenter', function () {eye_change('e_33_34');});
+document.getElementById('e_33_34').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_34_33').addEventListener('mouseenter', function () {eye_change('e_34_33');});
+document.getElementById('e_34_33').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_34_35').addEventListener('mouseenter', function () {eye_change('e_34_35');});
+document.getElementById('e_34_35').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_35_34').addEventListener('mouseenter', function () {eye_change('e_35_34');});
+document.getElementById('e_35_34').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_34_36').addEventListener('mouseenter', function () {eye_change('e_34_36');});
+document.getElementById('e_34_36').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_36_34').addEventListener('mouseenter', function () {eye_change('e_36_34');});
+document.getElementById('e_36_34').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_33_41').addEventListener('mouseenter', function () {eye_change('e_33_41');});
+document.getElementById('e_33_41').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_41_33').addEventListener('mouseenter', function () {eye_change('e_41_33');});
+document.getElementById('e_41_33').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_41_40').addEventListener('mouseenter', function () {eye_change('e_41_40');});
+document.getElementById('e_41_40').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_40_41').addEventListener('mouseenter', function () {eye_change('e_40_41');});
+document.getElementById('e_40_41').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_41_39').addEventListener('mouseenter', function () {eye_change('e_41_39');});
+document.getElementById('e_41_39').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_39_41').addEventListener('mouseenter', function () {eye_change('e_39_41');});
+document.getElementById('e_39_41').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_41_38').addEventListener('mouseenter', function () {eye_change('e_41_38');});
+document.getElementById('e_41_38').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_38_41').addEventListener('mouseenter', function () {eye_change('e_38_41');});
+document.getElementById('e_38_41').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_40_39').addEventListener('mouseenter', function () {eye_change('e_40_39');});
+document.getElementById('e_40_39').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_39_40').addEventListener('mouseenter', function () {eye_change('e_39_40');});
+document.getElementById('e_39_40').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_39_38').addEventListener('mouseenter', function () {eye_change('e_39_38');});
+document.getElementById('e_39_38').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_38_39').addEventListener('mouseenter', function () {eye_change('e_38_39');});
+document.getElementById('e_38_39').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_41_42').addEventListener('mouseenter', function () {eye_change('e_41_42');});
+document.getElementById('e_41_42').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_42_41').addEventListener('mouseenter', function () {eye_change('e_42_41');});
+document.getElementById('e_42_41').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_42_46').addEventListener('mouseenter', function () {eye_change('e_42_46');});
+document.getElementById('e_42_46').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_46_42').addEventListener('mouseenter', function () {eye_change('e_46_42');});
+document.getElementById('e_46_42').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_46_47').addEventListener('mouseenter', function () {eye_change('e_46_47');});
+document.getElementById('e_46_47').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_47_46').addEventListener('mouseenter', function () {eye_change('e_47_46');});
+document.getElementById('e_47_46').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_46_48').addEventListener('mouseenter', function () {eye_change('e_46_48');});
+document.getElementById('e_46_48').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_48_46').addEventListener('mouseenter', function () {eye_change('e_48_46');});
+document.getElementById('e_48_46').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_42_43').addEventListener('mouseenter', function () {eye_change('e_42_43');});
+document.getElementById('e_42_43').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_43_42').addEventListener('mouseenter', function () {eye_change('e_43_42');});
+document.getElementById('e_43_42').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_43_45').addEventListener('mouseenter', function () {eye_change('e_43_45');});
+document.getElementById('e_43_45').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_45_43').addEventListener('mouseenter', function () {eye_change('e_45_43');});
+document.getElementById('e_45_43').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_43_44').addEventListener('mouseenter', function () {eye_change('e_43_44');});
+document.getElementById('e_43_44').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_44_43').addEventListener('mouseenter', function () {eye_change('e_44_43');});
+document.getElementById('e_44_43').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_42_49').addEventListener('mouseenter', function () {eye_change('e_42_49');});
+document.getElementById('e_42_49').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_49_42').addEventListener('mouseenter', function () {eye_change('e_49_42');});
+document.getElementById('e_49_42').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_49_53').addEventListener('mouseenter', function () {eye_change('e_49_53');});
+document.getElementById('e_49_53').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_53_49').addEventListener('mouseenter', function () {eye_change('e_53_49');});
+document.getElementById('e_53_49').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_53_54').addEventListener('mouseenter', function () {eye_change('e_53_54');});
+document.getElementById('e_53_54').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_54_53').addEventListener('mouseenter', function () {eye_change('e_54_53');});
+document.getElementById('e_54_53').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_53_55').addEventListener('mouseenter', function () {eye_change('e_53_55');});
+document.getElementById('e_53_55').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_55_53').addEventListener('mouseenter', function () {eye_change('e_55_53');});
+document.getElementById('e_55_53').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_49_50').addEventListener('mouseenter', function () {eye_change('e_49_50');});
+document.getElementById('e_49_50').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_50_49').addEventListener('mouseenter', function () {eye_change('e_50_49');});
+document.getElementById('e_50_49').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_50_51').addEventListener('mouseenter', function () {eye_change('e_50_51');});
+document.getElementById('e_50_51').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_51_50').addEventListener('mouseenter', function () {eye_change('e_51_50');});
+document.getElementById('e_51_50').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_50_52').addEventListener('mouseenter', function () {eye_change('e_50_52');});
+document.getElementById('e_50_52').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_52_50').addEventListener('mouseenter', function () {eye_change('e_52_50');});
+document.getElementById('e_52_50').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_49_56').addEventListener('mouseenter', function () {eye_change('e_49_56');});
+document.getElementById('e_49_56').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_56_49').addEventListener('mouseenter', function () {eye_change('e_56_49');});
+document.getElementById('e_56_49').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_56_60').addEventListener('mouseenter', function () {eye_change('e_56_60');});
+document.getElementById('e_56_60').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_60_56').addEventListener('mouseenter', function () {eye_change('e_60_56');});
+document.getElementById('e_60_56').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_60_61').addEventListener('mouseenter', function () {eye_change('e_60_61');});
+document.getElementById('e_60_61').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_61_60').addEventListener('mouseenter', function () {eye_change('e_61_60');});
+document.getElementById('e_61_60').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_60_62').addEventListener('mouseenter', function () {eye_change('e_60_62');});
+document.getElementById('e_60_62').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_62_60').addEventListener('mouseenter', function () {eye_change('e_62_60');});
+document.getElementById('e_62_60').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_56_57').addEventListener('mouseenter', function () {eye_change('e_56_57');});
+document.getElementById('e_56_57').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_57_56').addEventListener('mouseenter', function () {eye_change('e_57_56');});
+document.getElementById('e_57_56').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_57_59').addEventListener('mouseenter', function () {eye_change('e_57_59');});
+document.getElementById('e_57_59').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_59_57').addEventListener('mouseenter', function () {eye_change('e_59_57');});
+document.getElementById('e_59_57').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_57_58').addEventListener('mouseenter', function () {eye_change('e_57_58');});
+document.getElementById('e_57_58').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_58_57').addEventListener('mouseenter', function () {eye_change('e_58_57');});
+document.getElementById('e_58_57').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_56_63').addEventListener('mouseenter', function () {eye_change('e_56_63');});
+document.getElementById('e_56_63').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_63_56').addEventListener('mouseenter', function () {eye_change('e_63_56');});
+document.getElementById('e_63_56').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_63_64').addEventListener('mouseenter', function () {eye_change('e_63_64');});
+document.getElementById('e_63_64').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_64_63').addEventListener('mouseenter', function () {eye_change('e_64_63');});
+document.getElementById('e_64_63').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_64_65').addEventListener('mouseenter', function () {eye_change('e_64_65');});
+document.getElementById('e_64_65').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_65_64').addEventListener('mouseenter', function () {eye_change('e_65_64');});
+document.getElementById('e_65_64').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_64_66').addEventListener('mouseenter', function () {eye_change('e_64_66');});
+document.getElementById('e_64_66').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_66_64').addEventListener('mouseenter', function () {eye_change('e_66_64');});
+document.getElementById('e_66_64').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_63_117').addEventListener('mouseenter', function () {eye_change('e_63_117');});
+document.getElementById('e_63_117').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_114_115').addEventListener('mouseenter', function () {eye_change('e_114_115');});
+document.getElementById('e_114_115').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_115_114').addEventListener('mouseenter', function () {eye_change('e_115_114');});
+document.getElementById('e_115_114').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_117_63').addEventListener('mouseenter', function () {eye_change('e_117_63');});
+document.getElementById('e_117_63').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_117_118').addEventListener('mouseenter', function () {eye_change('e_117_118');});
+document.getElementById('e_117_118').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_118_117').addEventListener('mouseenter', function () {eye_change('e_118_117');});
+document.getElementById('e_118_117').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_118_114').addEventListener('mouseenter', function () {eye_change('e_118_114');});
+document.getElementById('e_118_114').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_114_118').addEventListener('mouseenter', function () {eye_change('e_114_118');});
+document.getElementById('e_114_118').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_115_116').addEventListener('mouseenter', function () {eye_change('e_115_116');});
+document.getElementById('e_115_116').addEventListener('mouseleave', function () {$('#travel').val('0');});
+document.getElementById('e_116_115').addEventListener('mouseenter', function () {eye_change('e_116_115');});
+document.getElementById('e_116_115').addEventListener('mouseleave', function () {$('#travel').val('0');});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	function load(id,deg){
+		document.getElementById("sky_1").setAttribute("material","src","images/"+id+".jpg");
+		$("#sky_1").attr('rotation','0 '+deg+' 0');
+	}
+	
+	
+	//анимация глаза
+	function eye_change(id){
+		if(document.getElementById("already_launching_travel").value == 0){
+			console.log("ЗАПУСК ОТЧЁТА К ПЕРЕХОДУ");
+			$("#travel").val("1");
+			$("#already_launching_travel").val("1");
+			
+			var id_as_array = id.split("_");
+			var prev_id_of_image = id_as_array[1];
+			var next_id_of_image = id_as_array[2];
+			//var next_deg_for_image = id_as_array[3];
+			
+			//узнаем, какое поле в данный момент актуально
+			var actual_sky = 1;
+			if($("#actual_sky").val() == "1"){
+				actual_sky = 2;
+			} else {
+				actual_sky = 1;
+			}
+			
+			document.getElementById(id).setAttribute("material","shader:gif;src:url(loading.gif);");
+				//блокирую остальные кнопки - НАЧАЛО
+				$(".e_"+prev_id_of_image).attr('opacity',"0");
+				var ab = document.getElementsByClassName('e_'+prev_id_of_image);
+				for(var i = 0; i < ab.length; i++) {
+					var x = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").x;
+					var y = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").y;
+					var z = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").z;
+					document.getElementsByClassName("e_"+prev_id_of_image)[i].setAttribute('position', {x: x, y: 1000, z: z});
+				}
+				$("#"+id).attr('opacity',"1");
+				var x = document.getElementById(id).getAttribute("position").x;
+				var y = document.getElementById(id).getAttribute("position").y;
+				var z = document.getElementById(id).getAttribute("position").z;
+				document.getElementById(id).setAttribute('position', {x: x, y: 1.25, z: z});
+				//блокирую остальные кнопки - КОНЕЦ
+			
+			//document.getElementById("sky_2").setAttribute("material","src","#images_"+next_id_of_image);
+			
+			setTimeout(function() {
+				loading_gif1(id);
+			}, 1000);
+			
+			/*
+			document.getElementById(id).setAttribute("src","#eye1");
+			setTimeout(function() {
+				eye_change1(id);
+			}, 500);
+			*/
+		}
+	}
+	
+	
+	function loading_gif1(id){
+		var id_as_array = id.split("_");
+		var prev_id_of_image = id_as_array[1];
+		var next_id_of_image = id_as_array[2];
+		//var next_deg_for_image = id_as_array[3];
+		if($("#travel").val() == "1"){
+			var id_as_array = id.split("_");
+			var next_id_of_image = id_as_array[2];
+			//var next_deg_for_image = id_as_array[3];
+			var actual_sky = 1;
+			if($("#actual_sky").val() == "1"){
+				actual_sky = 2;
+				prev_sky = 1;
+			} else {
+				actual_sky = 1;
+				prev_sky = 2;
+			}
+			document.getElementById("sky_"+actual_sky).setAttribute("material","src","images/"+next_id_of_image+".jpg");
+			//$("#sky_"+actual_sky).attr('rotation','0 '+next_deg_for_image+' 0');
+			$("#sky_"+actual_sky).attr('rotation','0 '+basic_degrees[next_id_of_image]+' 0');
+			
+				//из-за конфликта, возникающего при разнице угла поворота sky, осуществляем поворот всех элементов - НАЧАЛО
+				//$("#sky_"+prev_sky).attr('rotation','0 '+basic_degrees[next_id_of_image]+' 0');
+				//$("#system_of_coordinates").attr('rotation','0 '+basic_degrees[next_id_of_image]+' 0');
+				//$("#cameraWrapper").attr('rotation','0 '+basic_degrees[next_id_of_image]+' 0');
+				//из-за конфликта, возникающего при разнице угла поворота sky, осуществляем поворот всех элементов - КОНЕЦ
+			
+			setTimeout(function() {
+				loading_gif2(id);
+			}, 1000);
+		} else {
+			document.getElementById(id).setAttribute("material","shader:flat;src:#eye;");
+			console.log("Сброс");
+			//разблокирую остальные кнопки - НАЧАЛО
+			$(".e_"+prev_id_of_image).attr('opacity',"1");
+			var ab = document.getElementsByClassName('e_'+prev_id_of_image);
+			for(var i = 0; i < ab.length; i++) {
+				var x = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").x;
+				var y = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").y;
+				var z = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").z;
+				document.getElementsByClassName("e_"+prev_id_of_image)[i].setAttribute('position', {x: x, y: 1.25, z: z});
+			}
+			//разблокирую остальные кнопки - КОНЕЦ
+			$("#already_launching_travel").val("0");
+		}
+	}
+	function loading_gif2(id){
+		var id_as_array = id.split("_");
+		var prev_id_of_image = id_as_array[1];
+		var next_id_of_image = id_as_array[2];
+		//var next_deg_for_image = id_as_array[3];
+		if($("#travel").val() == "1"){
+			setTimeout(function() {
+				document.getElementById(id).setAttribute("material","shader:flat;src:#eye;");
+				walk(id);
+			}, 1000);
+		} else {
+			document.getElementById(id).setAttribute("material","shader:flat;src:#eye;");
+			console.log("Сброс");
+			//разблокирую остальные кнопки - НАЧАЛО
+			$(".e_"+prev_id_of_image).attr('opacity',"1");
+			var ab = document.getElementsByClassName('e_'+prev_id_of_image);
+			for(var i = 0; i < ab.length; i++) {
+				var x = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").x;
+				var y = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").y;
+				var z = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").z;
+				document.getElementsByClassName("e_"+prev_id_of_image)[i].setAttribute('position', {x: x, y: 1.25, z: z});
+			}
+			//разблокирую остальные кнопки - КОНЕЦ
+			$("#already_launching_travel").val("0");
+		}
+	}
+	
+	
+	
+	
+	function eye_change1(id){
+		if($("#travel").val() == "1"){
+			document.getElementById(id).setAttribute("src","#eye2");
+			setTimeout(function() {
+				eye_change2(id);
+			}, 500);
+		} else {
+			document.getElementById(id).setAttribute("src","#eye");
+			console.log("Сброс");
+		}
+	}
+	function eye_change2(id){
+		if($("#travel").val() == "1"){
+			document.getElementById(id).setAttribute("src","#eye3");
+			setTimeout(function() {
+				eye_change3(id);
+			}, 500);
+		} else {
+			document.getElementById(id).setAttribute("src","#eye");
+			console.log("Сброс");
+		}
+	}
+	function eye_change3(id){
+		if($("#travel").val() == "1"){
+			document.getElementById(id).setAttribute("src","#eye4");
+			setTimeout(function() {
+				document.getElementById(id).setAttribute("src","#eye");
+				walk(id);
+			}, 500);
+		} else {
+			document.getElementById(id).setAttribute("src","#eye");
+			console.log("Сброс");
+		}
+	}
+	
+	
+	
+	function walk(id){
+		//получаем id как массив
+		var id_as_array = id.split("_");
+		var prev_id_of_image = id_as_array[1];
+		var next_id_of_image = id_as_array[2];
+		//var next_deg_for_image = id_as_array[3];
+		
+		
+		//убираем все кнопки предыдущие
+		$(".e_"+prev_id_of_image).attr('opacity',"0");
+		var ab = document.getElementsByClassName('e_'+prev_id_of_image);
+		for(var i = 0; i < ab.length; i++) {
+			var x = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").x;
+			var y = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").y;
+			var z = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").z;
+			document.getElementsByClassName("e_"+prev_id_of_image)[i].setAttribute('position', {x: x, y: 1000, z: z});
+		}
+		
+		
+		//проверяем на всякий случай, прогружено ли изображение в запасное поле, если нет, повторяем операцию. Это для поверок в будущем через консоль
+			var actual_sky = 1;
+			if($("#actual_sky").val() == "1"){
+				actual_sky = 2;
+				prev_sky = 1;
+			} else {
+				actual_sky = 1;
+				prev_sky = 2;
+			}
+		if(document.getElementById("sky_"+actual_sky).getAttribute("material","src") != "images/"+next_id_of_image+".jpg"){
+			document.getElementById("sky_"+actual_sky).setAttribute("material","src","images/"+next_id_of_image+".jpg");
+			$("#sky_"+actual_sky).attr('rotation','0 '+basic_degrees[next_id_of_image]+' 0');
+		}
+		
+		
+		//прописываем в запасное поле нужное следующее изображение, а также, устанавливаем нужный поворот изображения
+		//if(id == "e_1_1"){change_sky("#images_2",180);}
+		//document.getElementById("sky_2").setAttribute("material","src","images/"+next_id_of_image+".jpg");
+		//document.getElementById("sky_2").setAttribute("material","src","#images_"+next_id_of_image+".jpg");
+		change_sky(next_id_of_image);
+		
+		
+		//делаем нужные кнопки снова видимыми - переношу на попозже 19.01.2019
+		/*
+		$(".e_"+next_id_of_image).attr('opacity',"1");
+		var ba = document.getElementsByClassName('e_'+next_id_of_image);
+		for(var i = 0; i < ba.length; i++) {
+			var x = document.getElementsByClassName('e_'+next_id_of_image)[i].getAttribute("position").x;
+			var y = document.getElementsByClassName('e_'+next_id_of_image)[i].getAttribute("position").y;
+			var z = document.getElementsByClassName('e_'+next_id_of_image)[i].getAttribute("position").z;
+			document.getElementsByClassName("e_"+next_id_of_image)[i].setAttribute('position', {x: x, y: 1.25, z: z});
+		}
+		$("#actual_image").val(next_id_of_image);
+		*/
+	}
+	
+	
+	
+	function slowly_change_sky(next_id_if_sky){
+		var next_sky = 1;
+		var prev_sky = 1;
+		if($("#actual_sky").val() == "1"){
+			next_sky = 2;
+			prev_sky = 1;
+		} else {
+			next_sky = 1;
+			prev_sky = 2;
+		}
+		
+		//изменение основного изображения
+		
+		
+		var change_sky = document.getElementById("change_sky").value;
+		//console.log("change_sky = "+change_sky);
+		
+		var new_change_sky = parseFloat(change_sky) + 0.1;
+		new_change_sky = new_change_sky.toFixed(1);
+		document.getElementById("change_sky").value = new_change_sky;
+		console.log("new_change_sky = "+new_change_sky);
+		
+		if(new_change_sky <= 0.1){
+			document.getElementById("sky_"+prev_sky).setAttribute("material","opacity","0.9");
+			document.getElementById("sky_"+next_sky).setAttribute("material","opacity","0.1");
+		}
+		//if(new_change_sky == 0.2){
+		if(new_change_sky <= 0.2 && new_change_sky > 0.1){
+			document.getElementById("sky_"+prev_sky).setAttribute("material","opacity","0.8");
+			document.getElementById("sky_"+next_sky).setAttribute("material","opacity","0.2");
+		}
+		//if(new_change_sky == 0.3){
+		if(new_change_sky <= 0.3 && new_change_sky > 0.2){
+			document.getElementById("sky_"+prev_sky).setAttribute("material","opacity","0.7");
+			document.getElementById("sky_"+next_sky).setAttribute("material","opacity","0.3");
+		}
+		//if(new_change_sky == 0.4){
+		if(new_change_sky <= 0.4 && new_change_sky > 0.3){
+			document.getElementById("sky_"+prev_sky).setAttribute("material","opacity","0.6");
+			document.getElementById("sky_"+next_sky).setAttribute("material","opacity","0.4");
+		}
+		//if(new_change_sky == 0.5){
+		if(new_change_sky <= 0.5 && new_change_sky > 0.4){
+			document.getElementById("sky_"+prev_sky).setAttribute("material","opacity","0.5");
+			document.getElementById("sky_"+next_sky).setAttribute("material","opacity","0.5");
+		}
+		//if(new_change_sky == 0.6){
+		if(new_change_sky <= 0.6 && new_change_sky > 0.5){
+			document.getElementById("sky_"+prev_sky).setAttribute("material","opacity","0.4");
+			document.getElementById("sky_"+next_sky).setAttribute("material","opacity","0.6");
+		}
+		//if(new_change_sky == 0.7){
+		if(new_change_sky <= 0.7 && new_change_sky > 0.6){
+			document.getElementById("sky_"+prev_sky).setAttribute("material","opacity","0.3");
+			document.getElementById("sky_"+next_sky).setAttribute("material","opacity","0.7");
+		}
+		//if(new_change_sky == 0.8){
+		if(new_change_sky <= 0.8 && new_change_sky > 0.7){
+			document.getElementById("sky_"+prev_sky).setAttribute("material","opacity","0.2");
+			document.getElementById("sky_"+next_sky).setAttribute("material","opacity","0.8");
+		}
+		//if(new_change_sky == 0.9){
+		if(new_change_sky <= 0.9 && new_change_sky > 0.8){
+			document.getElementById("sky_"+prev_sky).setAttribute("material","opacity","0.1");
+			document.getElementById("sky_"+next_sky).setAttribute("material","opacity","0.9");
+		}
+		//if(new_change_sky >= 1){
+		if(new_change_sky > 0.9){
+			document.getElementById("sky_"+prev_sky).setAttribute("material","opacity","0");
+			document.getElementById("sky_"+next_sky).setAttribute("material","opacity","1");
+			clearInterval(interval);
+			
+			$("#travel").val("0");
+			$("#change_sky").val("0");
+			
+			//смена актуальной сферы
+			$("#actual_sky").val(next_sky);
+			
+			
+			//$("#sky_1").attr('rotation','0 '+deg+' 0');
+			//document.getElementById("sky_1").setAttribute("material","src",next_id_if_sky);
+			//document.getElementById("sky_1").setAttribute("material","src","images/"+next_id_if_sky+".jpg");
+			//document.getElementById("sky_1").setAttribute("material","src","#images_"+next_id_if_sky);
+			//console.log("Замена картинки sky_1");
+			//document.getElementById("sky_2").setAttribute("material","opacity","0");
+			//document.getElementById("sky_1").setAttribute("material","opacity","1");
+			
+			
+			setTimeout(function() {
+				var next_id_of_image = next_id_if_sky;
+				$(".e_"+next_id_of_image).attr('opacity',"1");
+				var ba = document.getElementsByClassName('e_'+next_id_of_image);
+				for(var i = 0; i < ba.length; i++) {
+					var x = document.getElementsByClassName('e_'+next_id_of_image)[i].getAttribute("position").x;
+					var y = document.getElementsByClassName('e_'+next_id_of_image)[i].getAttribute("position").y;
+					var z = document.getElementsByClassName('e_'+next_id_of_image)[i].getAttribute("position").z;
+					document.getElementsByClassName("e_"+next_id_of_image)[i].setAttribute('position', {x: x, y: 1.25, z: z});
+				}
+				$("#actual_image").val(next_id_of_image);
+				$("#already_launching_travel").val("0");
+				Android.save_position(next_id_of_image);
+				
+				//здесь должна быть функция записи последней точки Android
+				
+			
+			}, 250);
+		}
+
+		/*
+		var change_sky = document.getElementById("change_sky").value;
+		console.log("change_sky = "+change_sky);
+		
+		var new_change_sky1 = 1 - parseFloat(change_sky);
+		var new_change_sky2 = parseFloat(change_sky) + 0.1;
+		
+		new_change_sky1 = new_change_sky1.toFixed(2);
+		new_change_sky2 = new_change_sky2.toFixed(2);
+		
+		console.log("new_change_sky1 = "+new_change_sky1);
+		console.log("new_change_sky2 = "+new_change_sky2);
+		if(new_change_sky2 != 1){
+			document.getElementById("sky_1").setAttribute("material","opacity",new_change_sky1);
+			document.getElementById("sky_2").setAttribute("material","opacity",new_change_sky2);
+		}
+		document.getElementById("change_sky").value = new_change_sky2;
+		*/
+		
+		/*
+		var opacity1 = document.getElementById("sky_1").getAttribute("material","opacity");
+		var opacity2 = document.getElementById("sky_2").getAttribute("material","opacity");
+		opacity1 = parseFloat(opacity1);
+		opacity2 = parseFloat(opacity2);
+		opacity1 = opacity1 - parseFloat(0.1);
+		opacity2 = opacity2 + parseFloat(0.1);
+		
+		//console.log("opacity1 = "+opacity1+" opacity2 = "+opacity2);
+		if(opacity1 != 0){
+			document.getElementById("sky_1").setAttribute("material","opacity",opacity1);
+			document.getElementById("sky_2").setAttribute("material","opacity",opacity2);
+		}
+		*/
+	}
+	
+	
+	function change_sky(next_id_if_sky){
+		//$("#sky_2").attr('rotation','0 '+deg+' 0');
+		
+		//устанавливаем картинку на прозрачную сферу заранее
+	
+		//осуществляем плавный переход
+		interval = setInterval(function(){ slowly_change_sky(next_id_if_sky) },40);
+	}
+	
+	
+	
+	
+	</script>
+	
+	<input id="status_of_playing_audio" value="0" style="display:none;" />
+	
+	<!--<audio id="start_audio" class="" preload="none"  src="audio/start_audio.mp3" style="display:none;"></audio>-->
+	<audio id="f_a_1" class="my_audio" preload="none"  src="audio/ru/1.mp3" style="display:none;"></audio>
+	<audio id="f_a_17" class="my_audio" preload="none"  src="audio/ru/17.mp3" style="display:none;"></audio>
+	<audio id="f_a_19" class="my_audio" preload="none"  src="audio/ru/19.mp3" style="display:none;"></audio>
+	<audio id="f_a_23" class="my_audio" preload="none"  src="audio/ru/23.mp3" style="display:none;"></audio>
+	<audio id="f_a_23_2" class="my_audio" preload="none"  src="audio/ru/23-2.mp3" style="display:none;"></audio>
+	<audio id="f_a_27" class="my_audio" preload="none"  src="audio/ru/27.mp3" style="display:none;"></audio>
+	<audio id="f_a_27_2" class="my_audio" preload="none"  src="audio/ru/27-2.mp3" style="display:none;"></audio>
+	<audio id="f_a_30" class="my_audio" preload="none"  src="audio/ru/30.mp3" style="display:none;"></audio>
+	<audio id="f_a_30_2" class="my_audio" preload="none"  src="audio/ru/30-2.mp3" style="display:none;"></audio>
+	<audio id="f_a_34" class="my_audio" preload="none"  src="audio/ru/34.mp3" style="display:none;"></audio>
+	<audio id="f_a_34_2" class="my_audio" preload="none"  src="audio/ru/34-2.mp3" style="display:none;"></audio>
+	<audio id="f_a_70" class="my_audio" preload="none"  src="audio/ru/70.mp3" style="display:none;"></audio>
+	<audio id="f_a_71" class="my_audio" preload="none"  src="audio/ru/71.mp3" style="display:none;"></audio>
+	<audio id="f_a_80" class="my_audio" preload="none"  src="audio/ru/80.mp3" style="display:none;"></audio>
+	<audio id="f_a_86" class="my_audio" preload="none"  src="audio/ru/86.mp3" style="display:none;"></audio>
+	<audio id="f_a_99" class="my_audio" preload="none"  src="audio/ru/99.mp3" style="display:none;"></audio>
+	<audio id="f_a_103" class="my_audio" preload="none"  src="audio/ru/103.mp3" style="display:none;"></audio>
+	
+	<script>
+	
+	document.getElementById('a_1').addEventListener('mouseenter', function () {play_audio('a_1');});
+	document.getElementById('a_17').addEventListener('mouseenter', function () {play_audio('a_17');});
+	document.getElementById('a_19').addEventListener('mouseenter', function () {play_audio('a_19');});
+	document.getElementById('a_23').addEventListener('mouseenter', function () {play_audio('a_23');});
+	document.getElementById('a_23_2').addEventListener('mouseenter', function () {play_audio('a_23_2');});
+	document.getElementById('a_27').addEventListener('mouseenter', function () {play_audio('a_27');});
+	document.getElementById('a_27_2').addEventListener('mouseenter', function () {play_audio('a_27_2');});
+	document.getElementById('a_30').addEventListener('mouseenter', function () {play_audio('a_30');});
+	document.getElementById('a_30_2').addEventListener('mouseenter', function () {play_audio('a_30_2');});
+	document.getElementById('a_34').addEventListener('mouseenter', function () {play_audio('a_34');});
+	document.getElementById('a_34_2').addEventListener('mouseenter', function () {play_audio('a_34_2');});
+	document.getElementById('a_70').addEventListener('mouseenter', function () {play_audio('a_70');});
+	document.getElementById('a_71').addEventListener('mouseenter', function () {play_audio('a_71');});
+	document.getElementById('a_80').addEventListener('mouseenter', function () {play_audio('a_80');});
+	document.getElementById('a_86').addEventListener('mouseenter', function () {play_audio('a_86');});
+	document.getElementById('a_99').addEventListener('mouseenter', function () {play_audio('a_99');});
+	document.getElementById('a_103').addEventListener('mouseenter', function () {play_audio('a_103');});
+	
+	function play_audio(id){
+		//проверяем на воспроизведение другого файла, если оно есть - останавливаем его
+		if(document.getElementById("status_of_playing_audio").value != "0"){
+			after_stop_audio(document.getElementById("status_of_playing_audio").value);
+		}
+	
+		console.log("Запуск аудио "+id);
+	
+		//прячем кнопку
+		$("#"+id).attr('opacity',"0");
+		var x = document.getElementById(id).getAttribute("position").x;
+		var y = document.getElementById(id).getAttribute("position").y;
+		var z = document.getElementById(id).getAttribute("position").z;
+		document.getElementById(id).setAttribute('position', {x: x, y: 1000, z: z});
+		
+		
+		//устанавливаем статус воспроизвездение аудио на 1, запускаем аудио-файл
+		//var audio = new Audio('audio/1.m4a');
+		//audio.play();
+		document.getElementById("status_of_playing_audio").value = id;
+		document.getElementById('f_'+id).play();
+	}
+	
+	//перехватываем окончание аудио
+	$("#f_"+"a_1").on("ended", function() {after_stop_audio("a_1");});
+	$("#f_"+"a_17").on("ended", function() {after_stop_audio("a_17");});
+	$("#f_"+"a_19").on("ended", function() {after_stop_audio("a_19");});
+	$("#f_"+"a_23").on("ended", function() {after_stop_audio("a_23");});
+	$("#f_"+"a_23_2").on("ended", function() {after_stop_audio("a_23_2");});
+	$("#f_"+"a_27").on("ended", function() {after_stop_audio("a_27");});
+	$("#f_"+"a_27_2").on("ended", function() {after_stop_audio("a_27_2");});
+	$("#f_"+"a_30").on("ended", function() {after_stop_audio("a_30");});
+	$("#f_"+"a_30_2").on("ended", function() {after_stop_audio("a_30_2");});
+	$("#f_"+"a_34").on("ended", function() {after_stop_audio("a_34");});
+	$("#f_"+"a_34_2").on("ended", function() {after_stop_audio("a_34_2");});
+	$("#f_"+"a_70").on("ended", function() {after_stop_audio("a_70");});
+	$("#f_"+"a_71").on("ended", function() {after_stop_audio("a_71");});
+	$("#f_"+"a_80").on("ended", function() {after_stop_audio("a_80");});
+	$("#f_"+"a_86").on("ended", function() {after_stop_audio("a_86");});
+	$("#f_"+"a_99").on("ended", function() {after_stop_audio("a_99");});
+	$("#f_"+"a_103").on("ended", function() {after_stop_audio("a_103");});
+	//document.getElementById('f_a_1').addEventListener('ended',function (evt) {console.log("Audio ended");});
+	
+	//функция после остановки аудио
+	function after_stop_audio(id){
+		console.log("Перехват окончания аудио");
+		//document.getElementById('f_'+id).stop();
+		document.getElementById('f_'+id).pause();
+		document.getElementById('f_'+id).currentTime = 0;
+		var id_as_array = id.split("_");
+		var id_of_image = id_as_array[1];
+		//проверяем актуальность изображения, если уже не актуально, ничего не делаем
+		if(document.getElementById("actual_image").value == id_of_image){
+			//делаем картинку снова видимой
+			$("#"+id).attr('opacity',"1");
+			var x = document.getElementById(id).getAttribute("position").x;
+			var y = document.getElementById(id).getAttribute("position").y;
+			var z = document.getElementById(id).getAttribute("position").z;
+			document.getElementById(id).setAttribute('position', {x: x, y: 1.25, z: z});
+			
+		}
+		document.getElementById("status_of_playing_audio").value = "0";
+	}
+	
+	
+	//функция смены языка
+	function preload_language(){
+		var a = getUrlVars()["lang"];
+		if(typeof a != "undefined"){
+			
+			document.getElementsByClassName('my_audio')[0].src = "audio/"+a+"/1.mp3";
+			document.getElementsByClassName('my_audio')[1].src = "audio/"+a+"/17.mp3";
+			document.getElementsByClassName('my_audio')[2].src = "audio/"+a+"/19.mp3";
+			document.getElementsByClassName('my_audio')[3].src = "audio/"+a+"/23.mp3";
+			document.getElementsByClassName('my_audio')[4].src = "audio/"+a+"/23-2.mp3";
+			document.getElementsByClassName('my_audio')[5].src = "audio/"+a+"/27.mp3";
+			document.getElementsByClassName('my_audio')[6].src = "audio/"+a+"/27-2.mp3";
+			document.getElementsByClassName('my_audio')[7].src = "audio/"+a+"/30.mp3";
+			document.getElementsByClassName('my_audio')[8].src = "audio/"+a+"/30-2.mp3";
+			document.getElementsByClassName('my_audio')[9].src = "audio/"+a+"/34.mp3";
+			document.getElementsByClassName('my_audio')[10].src = "audio/"+a+"/34-2.mp3";
+			document.getElementsByClassName('my_audio')[11].src = "audio/"+a+"/70.mp3";
+			document.getElementsByClassName('my_audio')[12].src = "audio/"+a+"/71.mp3";
+			document.getElementsByClassName('my_audio')[13].src = "audio/"+a+"/80.mp3";
+			document.getElementsByClassName('my_audio')[14].src = "audio/"+a+"/86.mp3";
+			document.getElementsByClassName('my_audio')[15].src = "audio/"+a+"/99.mp3";
+			document.getElementsByClassName('my_audio')[16].src = "audio/"+a+"/103.mp3";
+			
+		}	
+		
+		if(a == "en"){
+			document.getElementById("save_and_exit").innerHTML = "SAVE AND EXIT";
+		}
+		if(a == "ru"){
+			document.getElementById("save_and_exit").innerHTML = "СОХРАНИТЬ И ВЫЙТИ";
+		}
+		if(a == "de"){
+			document.getElementById("save_and_exit").innerHTML = "SPEICHERN UND SCHLIESSEN";
+		}
+		if(a == "se"){
+			document.getElementById("save_and_exit").innerHTML = "GUARDAR Y SALIR";
+		}
+		if(a == "pt"){
+			document.getElementById("save_and_exit").innerHTML = "SALVAR E SAIR";
+		}
+		
+			
+	}
+	preload_language();
+	
+	
+	
+	//функция продолжить с точки
+	
+	function onload_sky(){
+	/*
+		var prev_id_of_image = 1;
+		//убираем все кнопки предыдущие
+		$(".e_"+prev_id_of_image).attr('opacity',"0");
+		var ab = document.getElementsByClassName('e_'+prev_id_of_image);
+		for(var i = 0; i < ab.length; i++) {
+			var x = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").x;
+			var y = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").y;
+			var z = document.getElementsByClassName('e_'+prev_id_of_image)[i].getAttribute("position").z;
+			document.getElementsByClassName("e_"+prev_id_of_image)[i].setAttribute('position', {x: x, y: 1000, z: z});
+		}
+		*/
+	
+		var a = getUrlVars()["a"];
+		if(typeof a != "undefined"){
+		} else {
+			a = "1";
+		}
+		console.log('e_'+a);
+		
+			$("#sky_1").attr('rotation','0 '+basic_degrees[a]+' 0');
+			document.getElementById("sky_1").setAttribute("material","src","images/"+a+".jpg");
+			$("#actual_image").val(a);
+				
+			setTimeout(function() {
+			//разблокирую остальные кнопки - НАЧАЛО
+			$(".e_"+a).attr('opacity',"1");
+			var ab = document.getElementsByClassName('e_'+a);
+			for(var i = 0; i < ab.length; i++) {
+				var x = document.getElementsByClassName('e_'+a)[i].getAttribute("position").x;
+				var y = document.getElementsByClassName('e_'+a)[i].getAttribute("position").y;
+				var z = document.getElementsByClassName('e_'+a)[i].getAttribute("position").z;
+				document.getElementsByClassName("e_"+a)[i].setAttribute('position', {x: x, y: 1.25, z: z});
+			}
+			//разблокирую остальные кнопки - КОНЕЦ
+			}, 2000);
+	}
+	onload_sky();
+	
+	
+	
+	
+	</script>
+	
+	
+  </body>
+</html>
